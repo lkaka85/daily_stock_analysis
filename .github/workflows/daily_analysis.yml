@@ -59,6 +59,19 @@ jobs:
       - name: 执行股票分析
         env:
           # ==========================================
+          # Agent 配置
+          # ==========================================
+          AGENT_ARCH: ${{ vars.AGENT_ARCH || 'multi' }}
+          AGENT_ORCHESTRATOR_MODE: ${{ vars.AGENT_ORCHESTRATOR_MODE || 'specialist' }}
+          AGENT_ORCHESTRATOR_TIMEOUT_S: ${{ vars.AGENT_ORCHESTRATOR_TIMEOUT_S || '480' }}
+          AGENT_DEEP_RESEARCH_TIMEOUT: ${{ vars.AGENT_DEEP_RESEARCH_TIMEOUT || '180' }}
+          AGENT_SKILL_ROUTING: ${{ vars.AGENT_SKILL_ROUTING || 'auto' }}
+          AGENT_EVENT_MONITOR_ENABLED: ${{ vars.AGENT_EVENT_MONITOR_ENABLED || 'false' }}
+          AGENT_RISK_OVERRIDE: ${{ vars.AGENT_RISK_OVERRIDE || 'true' }}
+          AGENT_DEEP_RESEARCH_BUDGET: ${{ vars.AGENT_DEEP_RESEARCH_BUDGET || '40000' }}
+          AGENT_SKILLS: ${{ vars.AGENT_SKILLS || 'all' }}
+
+          # ==========================================
           # AI 配置
           # ==========================================
           # LITELLM_CONFIG
